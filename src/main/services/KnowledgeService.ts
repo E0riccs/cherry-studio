@@ -1,6 +1,7 @@
 /**
  * Knowledge Service - Manages knowledge bases using RAG (Retrieval-Augmented Generation)
  *
+ * 运行于 Electron 的主进程中，根据具体操作逻辑，调用各类组件提供 RAG 服务。
  * This service handles creation, management, and querying of knowledge bases from various sources
  * including files, directories, URLs, sitemaps, and notes.
  *
@@ -474,7 +475,9 @@ class KnowledgeService {
   }
 
   public rerank = async (
+    // 事件（触发）
     _: Electron.IpcMainInvokeEvent,
+    // 解构赋值
     { search, base, results }: { search: string; base: KnowledgeBaseParams; results: ExtractChunkData[] }
   ): Promise<ExtractChunkData[]> => {
     if (results.length === 0) {

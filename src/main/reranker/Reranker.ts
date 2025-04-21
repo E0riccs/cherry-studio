@@ -1,3 +1,8 @@
+/**
+ * 向上，承接KnowledgeService，隐藏具体的操作逻辑
+ * 向下，使用工厂模式，创造具体的操作实例。
+ */
+
 import type { ExtractChunkData } from '@cherrystudio/embedjs-interfaces'
 import { KnowledgeBaseParams } from '@types'
 
