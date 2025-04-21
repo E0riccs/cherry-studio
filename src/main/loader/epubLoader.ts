@@ -214,6 +214,7 @@ export class EpubLoader extends BaseLoader<Record<string, string | number | bool
    * 生成文本块
    * 重写 BaseLoader 的方法，将提取的文本分割成适当大小的块
    * 每个块都包含源文件和元数据信息
+   * 由 langchain 提供
    */
   override async *getUnfilteredChunks() {
     // 如果还没有提取文本，先提取
