@@ -1,26 +1,27 @@
 import { AxiosInstance, default as axios_ } from 'axios'
+import { ProxyAgent } from 'proxy-agent'
 
 import { proxyManager } from './ProxyManager'
 
 class AxiosProxy {
-  private cacheAxios: AxiosInstance | undefined
-  private proxyURL: string | undefined
+  private cacheAxios: AxiosInstance | null = null
+  private proxyAgent: ProxyAgent | null = null
 
   get axios(): AxiosInstance {
-    // 动态获取代理配置，每次get axios时都会重新获取代理配置
-    const currentProxyURL = proxyManager.getProxyUrl() // 单例模式的 proxyManager
-    if (this.proxyURL !== currentProxyURL) {
-      this.proxyURL = currentProxyURL
-      const agent = proxyManager.getProxyAgent()
+    const currentProxyAgent = proxyManager.getProxyAgent() // 单例模式的 proxyManager
+
+    // 如果代理发生变化或尚未初始化，则重新创建 axios 实例
+    if (this.cacheAxios === null || (currentProxyAgent !== null && this.proxyAgent !== currentProxyAgent)) {
+      this.proxyAgent = currentProxyAgent
+
+      // 创建带有代理配置的 axios 实例
       this.cacheAxios = axios_.create({
         proxy: false,
-        ...(agent && { httpAgent: agent, httpsAgent: agent })
+        httpAgent: currentProxyAgent || undefined,
+        httpsAgent: currentProxyAgent || undefined
       })
     }
 
-    if (this.cacheAxios === undefined) {
-      this.cacheAxios = axios_.create({ proxy: false })
-    }
     return this.cacheAxios
   }
 }
