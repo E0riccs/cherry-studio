@@ -32,6 +32,7 @@ if (!app.requestSingleInstanceLock()) {
       app.dock?.hide()
     }
 
+    // 创建主窗口，preload 在此
     const mainWindow = windowService.createMainWindow()
     new TrayService()
 

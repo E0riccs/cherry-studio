@@ -1,3 +1,7 @@
+/**
+ * 预加载脚本
+ * 前端侧，将主进程功能（自定义 + electron）暴露给前端
+ */
 import type { ExtractChunkData } from '@cherrystudio/embedjs-interfaces'
 import { electronAPI } from '@electron-toolkit/preload'
 import { IpcChannel } from '@shared/IpcChannel'
@@ -191,6 +195,7 @@ const api = {
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
 // just add to the DOM global.
+// 上下文隔离（推荐）
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)

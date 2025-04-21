@@ -1,3 +1,6 @@
+/**
+ * 受主进程管理，监听来自渲染进程的调用
+ */
 import fs from 'node:fs'
 import { arch } from 'node:os'
 
