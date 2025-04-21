@@ -6,6 +6,7 @@ import JinaReranker from './JinaReranker'
 import SiliconFlowReranker from './SiliconFlowReranker'
 import VoyageReranker from './VoyageReranker'
 
+// 生产具体的重排序模型，已定义的按照已定义的方法，未定义的为default值。
 export default class RerankerFactory {
   static create(base: KnowledgeBaseParams): BaseReranker {
     if (base.rerankModelProvider === 'silicon') {

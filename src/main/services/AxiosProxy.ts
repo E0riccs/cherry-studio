@@ -7,7 +7,8 @@ class AxiosProxy {
   private proxyURL: string | undefined
 
   get axios(): AxiosInstance {
-    const currentProxyURL = proxyManager.getProxyUrl()
+    // 动态获取代理配置，每次get axios时都会重新获取代理配置
+    const currentProxyURL = proxyManager.getProxyUrl() // 单例模式的 proxyManager
     if (this.proxyURL !== currentProxyURL) {
       this.proxyURL = currentProxyURL
       const agent = proxyManager.getProxyAgent()
@@ -24,4 +25,5 @@ class AxiosProxy {
   }
 }
 
+// 单例模式
 export default new AxiosProxy()
