@@ -36,6 +36,7 @@ const FILE_LOADER_MAP: Record<string, string> = {
   // 其他类型默认为文本类型
 }
 
+// OpenDocument 文件
 export async function addOdLoader(
   ragApplication: RAGApplication,
   file: FileType,
@@ -55,7 +56,7 @@ export async function addOdLoader(
     new OdLoader({
       odType,
       filePath: file.path,
-      chunkSize: base.chunkSize,
+      chunkSize: base.chunkSize, // 文件分块设置
       chunkOverlap: base.chunkOverlap
     }) as any,
     forceReload
