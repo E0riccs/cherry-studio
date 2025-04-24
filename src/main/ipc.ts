@@ -21,6 +21,9 @@ import { ExportService } from './services/ExportService'
 import FileService from './services/FileService'
 import FileStorage from './services/FileStorage'
 import { GeminiService } from './services/GeminiService'
+
+console.log()
+
 import KnowledgeService from './services/KnowledgeService'
 import mcpService from './services/MCPService'
 import * as NutstoreService from './services/NutstoreService'
