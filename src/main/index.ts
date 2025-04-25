@@ -7,12 +7,6 @@ import { app, ipcMain } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer'
 import Logger from 'electron-log'
 
-<<<<<<< HEAD
-console.log()
-
-=======
->>>>>>> ed2f903c00622c779f45b1ca8e91e1ed0909e69d
-import { initSentry } from './integration/sentry'
 import { registerIpc } from './ipc'
 import { configManager } from './services/ConfigManager'
 import mcpService from './services/MCPService'
@@ -20,6 +14,7 @@ import { CHERRY_STUDIO_PROTOCOL, handleProtocolUrl, registerProtocolClient } fro
 import { registerShortcuts } from './services/ShortcutService'
 import { TrayService } from './services/TrayService'
 import { windowService } from './services/WindowService'
+import { setAppDataDir } from './utils/file'
 
 // Check for single instance lock
 if (!app.requestSingleInstanceLock()) {
@@ -59,6 +54,8 @@ if (!app.requestSingleInstanceLock()) {
 
     replaceDevtoolsFont(mainWindow)
 
+    setAppDataDir()
+
     if (process.env.NODE_ENV === 'development') {
       installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS])
         .then((name) => console.log(`Added Extension:  ${name}`))
@@ -71,14 +68,6 @@ if (!app.requestSingleInstanceLock()) {
     ipcMain.handle(IpcChannel.System_GetHostname, () => {
       return require('os').hostname()
     })
-  })
-
-  registerProtocolClient(app)
-
-  // macOS specific: handle protocol when app is already running
-  app.on('open-url', (event, url) => {
-    event.preventDefault()
-    handleProtocolUrl(url)
   })
 
   registerProtocolClient(app)
@@ -119,5 +108,3 @@ if (!app.requestSingleInstanceLock()) {
   // In this file you can include the rest of your app"s specific main process
   // code. You can also put them in separate files and require them here.
 }
-
-initSentry()
