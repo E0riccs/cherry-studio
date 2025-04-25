@@ -7,8 +7,11 @@ import { app, ipcMain } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer'
 import Logger from 'electron-log'
 
+<<<<<<< HEAD
 console.log()
 
+=======
+>>>>>>> ed2f903c00622c779f45b1ca8e91e1ed0909e69d
 import { initSentry } from './integration/sentry'
 import { registerIpc } from './ipc'
 import { configManager } from './services/ConfigManager'
