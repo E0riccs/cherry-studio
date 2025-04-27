@@ -1,5 +1,5 @@
 /**
- * 受主进程管理，监听来自渲染进程的调用
+ * 受主进程管理，监听来自渲染进程的调用，并做出相应回调
  */
 import fs from 'node:fs'
 import { arch } from 'node:os'
@@ -46,6 +46,7 @@ const obsidianVaultService = new ObsidianVaultService()
 export function registerIpc(mainWindow: BrowserWindow, app: Electron.App) {
   const appUpdater = new AppUpdater(mainWindow)
 
+  // handle 某个 信道，做出反应
   ipcMain.handle(IpcChannel.App_Info, () => ({
     version: app.getVersion(),
     isPackaged: app.isPackaged,

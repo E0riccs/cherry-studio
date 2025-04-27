@@ -33,6 +33,7 @@ export class WindowService {
   }
 
   public createMainWindow(): BrowserWindow {
+    // 主窗口实例管理
     if (this.mainWindow && !this.mainWindow.isDestroyed()) {
       this.mainWindow.show()
       this.mainWindow.focus()
@@ -48,6 +49,7 @@ export class WindowService {
 
     const theme = configManager.getTheme()
 
+    // 创建真正的窗口
     this.mainWindow = new BrowserWindow({
       x: mainWindowState.x,
       y: mainWindowState.y,

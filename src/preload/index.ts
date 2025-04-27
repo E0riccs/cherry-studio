@@ -202,6 +202,7 @@ const api = {
 // 上下文隔离（推荐）
 if (process.contextIsolated) {
   try {
+    // 预加载脚本的标准操作，暴露内容给渲染进程
     contextBridge.exposeInMainWorld('electron', electronAPI)
     contextBridge.exposeInMainWorld('api', api)
     contextBridge.exposeInMainWorld('obsidian', {
