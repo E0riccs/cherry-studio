@@ -1050,6 +1050,7 @@
       "general.user_name.placeholder": "輸入您的名稱",
       "general.view_webdav_settings": "檢視 WebDAV 設定",
       "input.auto_translate_with_space": "快速敲擊 3 次空格翻譯",
+      "input.show_translate_confirm": "顯示翻譯確認對話框",
       "input.target_language": "目標語言",
       "input.target_language.chinese": "簡體中文",
       "input.target_language.chinese-traditional": "繁體中文",
@@ -1169,6 +1170,22 @@
           "sse": "SSE",
           "streamableHttp": "流式",
           "stdio": "STDIO"
+        },
+        "sync": {
+          "title": "同步伺服器",
+          "selectProvider": "選擇提供者：",
+          "discoverMcpServers": "發現MCP伺服器",
+          "discoverMcpServersDescription": "訪問平台以發現可用的MCP伺服器",
+          "getToken": "獲取 API 令牌",
+          "getTokenDescription": "從您的帳戶獲取個人 API 令牌",
+          "setToken": "輸入您的令牌",
+          "tokenRequired": "需要 API 令牌",
+          "tokenPlaceholder": "在此輸入 API 令牌",
+          "button": "同步",
+          "error": "同步MCP伺服器出錯",
+          "success": "同步MCP伺服器成功",
+          "unauthorized": "同步未授權",
+          "noServersAvailable": "無可用的 MCP 伺服器"
         }
       },
       "messages.divider": "訊息間顯示分隔線",
@@ -1256,10 +1273,16 @@
         "basic_auth.user_name.tip": "留空以停用",
         "basic_auth.password": "密碼",
         "basic_auth.password.tip": "",
-        "charge": "儲值",
+        "charge": "餘額充值",
+        "bills": "費用帳單",
         "check": "檢查",
         "check_all_keys": "檢查所有金鑰",
         "check_multiple_keys": "檢查多個 API 金鑰",
+        "oauth": {
+          "button": "使用{{provider}}帳號登入",
+          "description": "本服務由<website>{{provider}}</website>提供",
+          "official_website": "官方網站"
+        },
         "copilot": {
           "auth_failed": "Github Copilot認證失敗",
           "auth_success": "Github Copilot 認證成功",

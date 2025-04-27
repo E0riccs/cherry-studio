@@ -1051,6 +1051,7 @@
       "general.user_name.placeholder": "Enter your name",
       "general.view_webdav_settings": "View WebDAV settings",
       "input.auto_translate_with_space": "Quickly translate with 3 spaces",
+      "input.show_translate_confirm": "Show translation confirmation dialog",
       "input.target_language": "Target language",
       "input.target_language.chinese": "Simplified Chinese",
       "input.target_language.chinese-traditional": "Traditional Chinese",
@@ -1170,6 +1171,22 @@
           "sse": "SSE",
           "streamableHttp": "Streamable HTTP",
           "stdio": "STDIO"
+        },
+        "sync": {
+          "title": "Sync Servers",
+          "selectProvider": "Select Provider:",
+          "discoverMcpServers": "Discover MCP Servers",
+          "discoverMcpServersDescription": "Visit the platform to discover available MCP servers",
+          "getToken": "Get API Token",
+          "getTokenDescription": "Retrieve your personal API token from your account",
+          "setToken": "Enter Your Token",
+          "tokenRequired": "API Token is required",
+          "tokenPlaceholder": "Enter API token here",
+          "button": "Sync",
+          "error": "Sync MCP Servers error",
+          "success": "Sync MCP Servers successful",
+          "unauthorized": "Sync Unauthorized",
+          "noServersAvailable": "No MCP servers available"
         }
       },
       "messages.divider": "Show divider between messages",
@@ -1257,10 +1274,16 @@
         "basic_auth.user_name.tip": "Left empty to disable",
         "basic_auth.password": "Password",
         "basic_auth.password.tip": "",
-        "charge": "Charge",
+        "charge": "Balance Recharge",
+        "bills": "Fee Bills",
         "check": "Check",
         "check_all_keys": "Check All Keys",
         "check_multiple_keys": "Check Multiple API Keys",
+        "oauth": {
+          "button": "Login with {{provider}}",
+          "description": "This service is provided by <website>{{provider}}</website>",
+          "official_website": "Official Website"
+        },
         "copilot": {
           "auth_failed": "Github Copilot authentication failed.",
           "auth_success": "GitHub Copilot authentication successful.",

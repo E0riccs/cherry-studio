@@ -1169,6 +1169,22 @@
           "sse": "SSE",
           "streamableHttp": "Потоковый HTTP",
           "stdio": "STDIO"
+        },
+        "sync": {
+          "title": "Синхронизация серверов",
+          "selectProvider": "Выберите провайдера:",
+          "discoverMcpServers": "Обнаружить серверы MCP",
+          "discoverMcpServersDescription": "Посетите платформу, чтобы обнаружить доступные серверы MCP",
+          "getToken": "Получить API токен",
+          "getTokenDescription": "Получите персональный API токен из вашей учетной записи",
+          "setToken": "Введите ваш токен",
+          "tokenRequired": "Требуется API токен",
+          "tokenPlaceholder": "Введите API токен здесь",
+          "button": "Синхронизировать",
+          "error": "Ошибка синхронизации серверов MCP",
+          "success": "Синхронизация серверов MCP успешна",
+          "unauthorized": "Синхронизация не разрешена",
+          "noServersAvailable": "Нет доступных серверов MCP"
         }
       },
       "messages.divider": "Показывать разделитель между сообщениями",
@@ -1256,10 +1272,16 @@
         "basic_auth.user_name.tip": "Оставить пустым для отключения",
         "basic_auth.password": "Пароль",
         "basic_auth.password.tip": "",
-        "charge": "Пополнить",
+        "charge": "Пополнить баланс",
+        "bills": "Счета за услуги",
         "check": "Проверить",
         "check_all_keys": "Проверить все ключи",
         "check_multiple_keys": "Проверить несколько ключей API",
+        "oauth": {
+          "button": "Войти с {{provider}}",
+          "description": "Сервис предоставляется <website>{{provider}}</website>",
+          "official_website": "Официальный сайт"
+        },
         "copilot": {
           "auth_failed": "Github Copilot认证失败",
           "auth_success": "Github Copilot认证成功",
@@ -1414,7 +1436,8 @@
       "privacy": {
         "title": "Настройки приватности",
         "enable_privacy_mode": "Анонимная отправка отчетов об ошибках и статистики"
-      }
+      },
+      "input.show_translate_confirm": "[to be translated]:显示翻译确认对话框"
     },
     "translate": {
       "any.language": "Любой язык",
