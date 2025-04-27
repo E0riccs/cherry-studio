@@ -11,6 +11,8 @@ import { CreateDirectoryOptions } from 'webdav'
 
 // Custom APIs for renderer
 const api = {
+  // invoke：调用，前端发起后段调用，后段返回消息
+  // send：发送，双端互传
   getAppInfo: () => ipcRenderer.invoke(IpcChannel.App_Info),
   reload: () => ipcRenderer.invoke(IpcChannel.App_Reload),
   setProxy: (proxy: string) => ipcRenderer.invoke(IpcChannel.App_Proxy, proxy),

@@ -46,7 +46,8 @@ const obsidianVaultService = new ObsidianVaultService()
 export function registerIpc(mainWindow: BrowserWindow, app: Electron.App) {
   const appUpdater = new AppUpdater(mainWindow)
 
-  // handle 某个 信道，做出反应
+  // handle - invoke 某个 信道，做出反应
+  // on - send 某个 信道，做出反应
   ipcMain.handle(IpcChannel.App_Info, () => ({
     version: app.getVersion(),
     isPackaged: app.isPackaged,
